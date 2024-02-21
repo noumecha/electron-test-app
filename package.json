@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/noumecha/electron-test-app/issues"
   },
-  "homepage": "https://github.com/noumecha/electron-test-app#readme"
+  "homepage": "https://github.com/noumecha/electron-test-app#readme",
+  "devDependencies": {
+    "electron": "^29.0.1"
+  }
 }
