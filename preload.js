@@ -1,5 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron')
-const usersmgr = import("./models/usersmgr");  
+const usersmgr = require("./models/usersmgr");  
 
 const getUsers = () => {
     return usersmgr.getUsers();
