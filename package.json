@@ -33,6 +33,8 @@
   },
   "dependencies": {
     "better-sqlite3": "^9.4.3",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.2"
   }
 }

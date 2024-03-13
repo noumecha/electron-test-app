@@ -3,14 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self">
+        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self"-->
         <title>Electron rendered</title>
     </head>
     <body>
         <h1>Hello world that's my first electron app</h1>
         <p id="info"></p>
         <div id="names"></div>
+        <script type="module">
+            import { con } from "./db.js";
+            con.connect();
+            let sql = "SELECT * FROM eleve";
+            con.query(sql, function(err, result) {
+                if (err) {
+                    console.log("Erreur de connection : " + err)
+                } else {
+                    let cont = document.getElementById("names");
+                    cont.innerHTML = JSON.stringify(result);
+                    console.log("Donnée recupérer : ", result)
+                }
+            });
+        </script>
+        <!--script type="text/javascript" src="./renderer.js"></script-->
     </body>
-    <script type="text/javascript" src="./renderer.js"></script>
 </html>
